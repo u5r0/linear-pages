@@ -8,7 +8,7 @@ import HamburgerIcon from "./icons/Hamburger";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full border-b border-gray-100 backdrop-blur-2xl px-6 sm:px-8">
+    <header className="fixed top-0 left-0 w-full border-b border-gray-100 backdrop-blur-2xl">
       <Container className="flex h-12">
         <Link href='/' className="flex items-center font-semibold">
           <Logo className="mr-2"/> Linear
@@ -41,7 +41,7 @@ export default function Header() {
                 Company 
                 <ChevronIcon className="group-hover:rotate-180 ml-1" fill="currentColor" />
               </Link>
-              <div className="invisible group-hover:visible hover:visible absolute top-7 -left-4 h-30 w-52 rounded-md bg-black p-1.5">
+              <div className="invisible group-hover:visible hover:visible absolute top-8 -left-4 h-30 w-52 rounded-lg bg-black p-1.5">
                 <ul className="[&_a]:flex [&_a]:items-center [&_a]:px-3 [&_a]:h-9 w-full text-gray-400 hover:child:text-gray-200">
                   <li>
                     <Link href='/'>
