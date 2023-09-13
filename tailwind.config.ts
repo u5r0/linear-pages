@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
   content: [
@@ -52,10 +51,7 @@ const config: Config = {
     },
   },
   plugins: [
-    // plugin(function({ addVariant }) {
-    //   addVariant('not-last', '&:not(:last-child)')
-    //   addVariant('child', '& > *')
-    // }),
+    require('@tailwindcss/container-queries'),
   ]
-}
+} satisfies Config
 export default config
