@@ -10,6 +10,10 @@ import { HamburgerIcon } from "./icons";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
+    // <li className="hidden lg:block">
+    //   <Link href=''>Integrations</Link>
+    // </li>
+
   return (
     <header className="fixed top-0 left-0 w-full border-b  border-gray-100 backdrop-blur-2xl">
       <Container className="flex h-12">
