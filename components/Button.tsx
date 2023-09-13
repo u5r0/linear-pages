@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils'
-import { cva, type VariantProps } from 'class-variance-authority'
 import Link from 'next/link'
 import type { ComponentProps } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority'
+
+import { cn } from '@/lib/utils'
 
 type ButtonProps = 
   VariantProps<typeof buttonVariants> 
@@ -19,7 +20,7 @@ const buttonVariants = cva("inline-flex items-center rounded-full font-medium", 
     size: {
       small: "text-xs px-3 h-7",
       medium: "text-sm px-4 h-8",
-      large: "text-md px-6 h-12",
+      large: "text-base px-6 h-12",
     }
   },
   defaultVariants: {
@@ -29,7 +30,7 @@ const buttonVariants = cva("inline-flex items-center rounded-full font-medium", 
 })
 
 const Button = ({ children, variant, size, className }: ButtonProps) => {
-  const classes = cn(buttonVariants({ variant, size, className }))
+  const classes = buttonVariants({ variant, size, className })
 
   return (
     <Link className={classes} href='/'>

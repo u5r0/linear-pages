@@ -9,11 +9,11 @@ type HeroElementProps = ComponentProps<"div"> & {
 }
 
 export const HeroTitle = ({ children, className }: HeroElementProps) => {
-  return <h1 className={cn("text-5xl my-6", className)}>{children}</h1>
+  return <h1 className={cn("text-4xl md:text-5xl my-6", className)}>{children}</h1>
 }
 
 export const HeroSubtitle = ({ children, className }: HeroElementProps) => {
-  return <p className={cn("text-lg mb-12", className)}>{children}</p>
+  return <p className={cn("text-md md:text-lg mb-12", className)}>{children}</p>
 }
 
 export default function Hero({ children }: HeroProps) {

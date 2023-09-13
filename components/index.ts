@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Container from "./Container";
 import Hero from "./Hero";
 import Button from "./Button";
+import NavBar from "./NavBar";
 
 export {
   Header,
@@ -10,4 +11,5 @@ export {
   Container,
   Hero,
   Button,
+  NavBar,
 }

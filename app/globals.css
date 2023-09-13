@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --nav-height: 3rem;
+  }
+
   html {
     @apply font-sans bg-black text-gray-200;
   }
