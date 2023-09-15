@@ -8,8 +8,8 @@ export default function Home() {
     <Container>
       <Hero>
         <Button variant="secondary" size="small">
-          Linear × Figma Plugin
-          <span className="ml-2 rounded-full bg-btn-200">→</span>
+          Announcing our $35M Series B
+          <ChevronIcon className="-rotate-90 ml-0.5" />
         </Button>
         <HeroTitle className="font-medium tracking-tightest">
           Linear is a better way
@@ -21,7 +21,7 @@ export default function Home() {
         </HeroSubtitle>
         <Button size='large'>
           Get started
-          <ChevronIcon className="-rotate-90 ml-2" fill="currentColor" />
+          <ChevronIcon className="-rotate-90 ml-1.5" />
         </Button>
         
         <img className="mt-32" src="/img/hero.webp" alt="Hero Image" />

@@ -43,7 +43,8 @@ const CompanyMenu = () => {
   return (
     <div className="relative group hidden sm:block ">
       <Link className="flex items-center cursor-default h-12" href=''>
-        Company <ChevronIcon className="group-hover:rotate-180 ml-1" />
+        Company 
+        <ChevronIcon className="group-hover:rotate-180 ml-1 mt-0.5" />
       </Link>
       <div className="hidden group-hover:block absolute top-10 -left-4 h-30 w-50 rounded-lg bg-black p-1.5">
         <ul>
