@@ -14,7 +14,7 @@ type ButtonProps =
 const buttonVariants = cva("inline-flex items-center rounded-full font-medium", {
   variants: {
     variant: {
-      primary: "bg-brand whitespace-nowrap hover:brightness-115 hover:text-shadow hover:shadow-high",
+      primary: "bg-brand whitespace-nowrap hover:brightness-115 text-shadow-sm hover:text-shadow hover:shadow-high",
       secondary: "bg-btn-200",
     },
     size: {

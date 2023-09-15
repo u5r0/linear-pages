@@ -40,7 +40,7 @@ export default function Header() {
         <NavBar isOpen={isOpen} />
 
         <div className="ml-auto flex items-center h-full text-sm">
-          <Link className="tracking-wide font-[450] hover:text-gray-300 whitespace-nowrap" href='/'>Log in</Link>
+          <Link className="font-medium hover:text-gray-300 whitespace-nowrap" href='/'>Log in</Link>
           <Button className="sticky right-0 ml-6" href="/">Sign up</Button>
         </div>
 

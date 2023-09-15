@@ -9,15 +9,15 @@ export default function Home() {
       <Hero>
         <Button variant="secondary" size="small">
           Announcing our $35M Series B
-          <ChevronIcon className="-rotate-90 ml-0.5" />
+          <ChevronIcon className="-rotate-90 ml-0.5 -mr-1.5" />
         </Button>
         <HeroTitle className="font-medium tracking-tightest">
           Linear is a better way
-          <br /> to build products
+          <br className="hidden md:block" /> to build products
         </HeroTitle>
         <HeroSubtitle>
           Meet the new standard for modern software development.
-          <br /> Streamline issues, sprints, and product roadmaps.
+          <br className="hidden md:block" /> Streamline issues, sprints, and product roadmaps.
         </HeroSubtitle>
         <Button size='large'>
           Get started
