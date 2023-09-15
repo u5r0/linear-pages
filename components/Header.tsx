@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Logo from "./icons/Logo";
 import { NavBar, Button, Container } from ".";
@@ -9,6 +9,23 @@ import { HamburgerIcon } from "./icons";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) html.classList.toggle("overflow-hidden", isOpen);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const closeHamburgerNavigation = () => setIsOpen(false);
+
+    window.addEventListener("orientationchange", closeHamburgerNavigation);
+    window.addEventListener("resize", closeHamburgerNavigation);
+
+    return () => {
+      window.removeEventListener("orientationchange", closeHamburgerNavigation);
+      window.removeEventListener("resize", closeHamburgerNavigation);
+    };
+  }, [setIsOpen]);
 
     // <li className="hidden lg:block">
     //   <Link href=''>Integrations</Link>
