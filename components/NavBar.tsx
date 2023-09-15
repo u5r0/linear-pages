@@ -45,7 +45,7 @@ const CompanyMenu = () => {
       <Link className="flex items-center cursor-default h-12" href=''>
         Company <ChevronIcon className="group-hover:rotate-180 ml-1" />
       </Link>
-      <div className="hidden group-hover:block absolute top-10 -left-4 h-30 w-52 rounded-lg bg-black p-1.5">
+      <div className="hidden group-hover:block absolute top-10 -left-4 h-30 w-50 rounded-lg bg-black p-1.5">
         <ul>
           {Links.slice(-3).map(link => (
             <li 

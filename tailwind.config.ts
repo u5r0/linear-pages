@@ -28,6 +28,9 @@ const config: Config = {
           300: 'rgba(255, 255, 255, 0.2)', // tertiary btn hover
         }
       },
+      backgroundImage: {
+        "page-gradient": 'radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3),hsla(0,0%,100%,0))',
+      },
       boxShadow: {
         high: '0px 7px 32px rgba(0,0,0,.35)',
       },
@@ -43,7 +46,8 @@ const config: Config = {
         tightest: '-.056em',
       },
       spacing: {
-        30: '7.5rem'
+        30: '7.5rem',
+        50: '12.5rem',
       },
       brightness: {
         115: '1.15'
