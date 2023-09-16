@@ -7,6 +7,15 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    keyframes: {
+      "fade-in": {
+        from: { opacity: '0', transform: 'translateY(-10px)' },
+        to: { opacity: '1', transform: 'none' },
+      },
+    },
+    animation: {
+      "fade-in": 'fade-in 1000ms ease 0ms backwards',
+    },
     extend: {
       fontFamily: {
         sans: '"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',

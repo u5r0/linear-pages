@@ -7,19 +7,19 @@ export default function Home() {
     <>
     <Container>
       <Hero>
-        <Button variant="secondary" size="small">
+        <Button className="animate-fade-in" variant="secondary" size="small">
           Announcing our $35M Series B
           <ChevronIcon className="-rotate-90 ml-0.5 -mr-1.5" />
         </Button>
-        <HeroTitle className="font-medium tracking-tightest">
+        <HeroTitle className="animate-fade-in font-medium tracking-tightest">
           Linear is a better way
           <br className="hidden md:block" /> to build products
         </HeroTitle>
-        <HeroSubtitle>
+        <HeroSubtitle className="animate-fade-in">
           Meet the new standard for modern software development.
           <br className="hidden md:block" /> Streamline issues, sprints, and product roadmaps.
         </HeroSubtitle>
-        <Button size='large'>
+        <Button className="animate-fade-in" size='large'>
           Get started
           <ChevronIcon className="-rotate-90 ml-1.5" />
         </Button>
