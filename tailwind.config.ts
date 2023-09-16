@@ -14,7 +14,7 @@ const config: Config = {
       },
     },
     animation: {
-      "fade-in": 'fade-in 1000ms ease 0ms backwards',
+      "fade-in": 'fade-in 1000ms ease var(--animation-delay, 0ms) backwards',
     },
     extend: {
       fontFamily: {
