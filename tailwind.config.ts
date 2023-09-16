@@ -38,18 +38,19 @@ const config: Config = {
         }
       },
       backgroundImage: {
-        "page-gradient": 'radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3),hsla(0,0%,100%,0))',
+        "page-gradient": 'radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3),transparent)',
+        "hero-gradient": 'radial-gradient(ellipse 50% 80% at 20% 40%,rgba(93,52,221,0.1),transparent), radial-gradient(ellipse 50% 80% at 80% 50%,rgba(120,119,198,0.15),transparent)',
       },
       boxShadow: {
         high: '0px 7px 32px rgba(0,0,0,.35)',
       },
       fontSize: {
-        xs: ['0.8125rem', '1'],
-        sm: ['0.875rem', '1'],
+        xs: '0.8125rem',
+        sm: '0.875rem',
         md: ['1.125rem', '1.3'],
         lg: ['1.375rem', '1.3'],
-        "4xl": ['2.75rem', '1'],
-        "5xl": ['5rem', '1'],
+        "4xl": '2.75rem',
+        "5xl": '5rem',
       },  
       letterSpacing: {
         tightest: '-.056em',
