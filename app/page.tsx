@@ -5,7 +5,7 @@ import { ChevronIcon } from "@/components/icons";
 
 export default function Home() {
   return (
-    <Container className="pb-[26.25rem]">
+    <Container className="pb-64 md:pb-[26.25rem]">
       <Hero>
         <Button className="animate-fade-in" variant="secondary" size="small">
           Announcing our $35M Series B

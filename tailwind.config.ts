@@ -12,6 +12,19 @@ const config: Config = {
         from: { opacity: '0', transform: 'translateY(-10px)' },
         to: { opacity: '1', transform: 'none' },
       },
+      'image-glow': {
+        '0%': {
+          opacity: '0',
+          'animation-timing-function': 'cubic-bezier(0.74, 0.25, 0.76, 1)',
+        },
+        '10%': {
+          opacity: '1',
+          'animation-timing-function': 'cubic-bezier(0.12, 0.01, 0.08, 0.99)',
+        },
+        '100%': {
+          opacity: '0.2',
+        },
+      },
       "image-rotate": {
         '0%': { transform: 'rotateX(25deg)' },
         '25%': { transform: 'rotateX(25deg) scale(0.9)' },
@@ -21,7 +34,8 @@ const config: Config = {
     },
     animation: {
       "fade-in": 'fade-in 1000ms ease var(--animation-delay, 0ms) backwards',
-      "image-rotate": 'image-rotate 1400ms ease forwards'
+      "image-rotate": 'image-rotate 1400ms ease forwards',
+      "image-glow": 'image-glow 4100ms 600ms ease-out forwards',
     },
     extend: {
       fontFamily: {
@@ -40,8 +54,8 @@ const config: Config = {
         },
         btn: {
           100: 'rgba(255, 255, 255, 0.05)',
-          200: 'rgba(255, 255, 255, 0.1)', // tertiary btn
-          300: 'rgba(255, 255, 255, 0.2)', // tertiary btn hover
+          200: 'rgba(255, 255, 255, 0.1)',
+          300: 'rgba(255, 255, 255, 0.2)',
         }
       },
       backgroundImage: {
@@ -64,11 +78,12 @@ const config: Config = {
         tightest: '-.056em',
       },
       spacing: {
+        18: '4.5rem',
         30: '7.5rem',
         50: '12.5rem',
       },
       brightness: {
-        115: '1.15'
+        115: '1.15',
       }
     },
   },
