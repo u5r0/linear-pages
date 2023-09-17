@@ -1,15 +1,25 @@
+'use client'
+
 import Image from "next/image"
-import HeroImg from "/img/hero.webp"
+import { useInView } from 'react-intersection-observer'
+
+import HeroImg from '../public/img/hero.webp';
+import { cn } from "@/lib/utils";
 
 const HeroImage = () => {
+  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true })
+  // console.log(inView)
+
   return (
-    <section className="[perspective:2000px] mt-32">
-      <div className="bg-hero-gradient bg-white bg-opacity-[0.01] rounded-lg [transform:rotateX(25deg)]">
-      <Image
-        src={HeroImg}
-        alt="Hero image"
-        className='opacity-0'
-      />
+    <section ref={ref} className="[perspective:2000px] mt-32">
+      <div className={cn(
+        "bg-hero-gradient bg-white bg-opacity-[0.01] border border-gray-100 rounded-lg transition-transform",
+        inView ? 'transform-none' : '[transform:rotateX(25deg)]'
+      )}>
+        <Image src={HeroImg} alt="Hero image" className={cn(
+            '',
+            inView ? 'opacity-100' : 'opacity-0'
+        )} />
       </div>
     </section>
   )
