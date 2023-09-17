@@ -31,11 +31,18 @@ const config: Config = {
         '60%': { transform: 'none' },
         '100%': { transform: 'none' },
       },
+      'image-strokes': {
+        '0%': { 'stroke-dashoffset': '1' },
+        '50%': { 'stroke-dashoffset': '0' },
+        '99%': { 'stroke-dashoffset': '0' },
+        '100%': { visiblity: 'hidden' },
+      },
     },
     animation: {
       "fade-in": 'fade-in 1000ms ease var(--animation-delay, 0ms) backwards',
       "image-rotate": 'image-rotate 1400ms ease forwards',
       "image-glow": 'image-glow 4100ms 600ms ease-out forwards',
+      "image-strokes": 'image-strokes 1200ms ease-out forwards'
     },
     extend: {
       fontFamily: {
