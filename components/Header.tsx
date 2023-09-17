@@ -32,7 +32,7 @@ export default function Header() {
     // </li>
 
   return (
-    <header className="fixed top-0 left-0 w-full border-b  border-gray-100 backdrop-blur-2xl">
+    <header className="fixed top-0 left-0 w-full border-b z-10 border-gray-100 backdrop-blur-2xl">
       <Container className="flex h-12">
         <Link href='/' className="flex items-center font-semibold">
           <Logo className="mr-2"/> Linear
