@@ -12,9 +12,16 @@ const config: Config = {
         from: { opacity: '0', transform: 'translateY(-10px)' },
         to: { opacity: '1', transform: 'none' },
       },
+      "image-rotate": {
+        '0%': { transform: 'rotateX(25deg)' },
+        '25%': { transform: 'rotateX(25deg) scale(0.9)' },
+        '60%': { transform: 'none' },
+        '100%': { transform: 'none' },
+      },
     },
     animation: {
       "fade-in": 'fade-in 1000ms ease var(--animation-delay, 0ms) backwards',
+      "image-rotate": 'image-rotate 1400ms ease forwards'
     },
     extend: {
       fontFamily: {
@@ -67,5 +74,5 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/container-queries'),
   ]
-} satisfies Config
+}
 export default config

@@ -13,8 +13,8 @@ const HeroImage = () => {
   return (
     <section ref={ref} className="[perspective:2000px] mt-32">
       <div className={cn(
-        "bg-hero-gradient bg-white bg-opacity-[0.01] border border-gray-100 rounded-lg transition-transform",
-        inView ? 'transform-none' : '[transform:rotateX(25deg)]'
+        "relative bg-hero-gradient bg-white bg-opacity-[0.01] border border-gray-100 rounded-lg",
+        inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
       )}>
         <Image src={HeroImg} alt="Hero image" className={cn(
             '',
