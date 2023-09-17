@@ -47,17 +47,18 @@ const config: Config = {
       backgroundImage: {
         "page-gradient": 'radial-gradient(ellipse 80% 50% at 50% -20%,rgba(120,119,198,0.3),transparent)',
         "hero-gradient": 'radial-gradient(ellipse 50% 80% at 20% 40%,rgba(93,52,221,0.1),transparent), radial-gradient(ellipse 50% 80% at 80% 50%,rgba(120,119,198,0.15),transparent)',
+        "hero-glow": 'conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg)',
       },
       boxShadow: {
         high: '0px 7px 32px rgba(0,0,0,.35)',
       },
       fontSize: {
-        xs: '0.8125rem',
-        sm: '0.875rem',
+        xs: ['0.8125rem', '1'],
+        sm: ['0.875rem', '1'],
         md: ['1.125rem', '1.3'],
         lg: ['1.375rem', '1.3'],
-        "4xl": '2.75rem',
-        "5xl": '5rem',
+        "4xl": ['2.75rem', '1'],
+        "5xl": ['5rem', '1'],
       },  
       letterSpacing: {
         tightest: '-.056em',
