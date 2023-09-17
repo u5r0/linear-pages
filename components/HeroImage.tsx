@@ -15,9 +15,10 @@ const HeroImage = () => {
       <div className={cn(
         "relative bg-hero-gradient bg-white bg-opacity-[0.01] border border-gray-100 rounded-lg",
         inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
+        "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow  before:[filter:blur(160px)]"
       )}>
         <Image src={HeroImg} alt="Hero image" className={cn(
-            '',
+            'relative z-10',
             inView ? 'opacity-100' : 'opacity-0'
         )} />
       </div>
