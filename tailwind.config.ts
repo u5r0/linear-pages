@@ -53,8 +53,8 @@ const config: Config = {
       "image-rotate": 'image-rotate 1400ms ease forwards',
       "image-glow": 'image-glow 4100ms 600ms ease-out forwards',
       "image-strokes": 'image-strokes 1200ms ease-out forwards',
-      "glow-line-horizontal": 'glow-line-horizontal var(--animation-duration) ease-in-out forwards',
-      "glow-line-vertical": 'glow-line-vertical var(--animation-duration) ease-in-out forwards',
+      "glow-line-horizontal": 'glow-line-horizontal var(--animation-duration) ease-in forwards',
+      "glow-line-vertical": 'glow-line-vertical var(--animation-duration) ease-in forwards',
     },
     extend: {
       fontFamily: {

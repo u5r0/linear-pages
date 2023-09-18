@@ -10,9 +10,12 @@ import { cn } from "@/lib/utils";
 const HeroImage = () => {
   const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true })
   const [lines, setLines] = useState([
-    { direction: "to bottom", duration: 1500, size: 12 },
-    { direction: "to right", duration: 3000, size: 10 },
+    { id: "horizontal", size: 10, direction: "to right", duration: 3000 },
+    { id: "vertical", size: 12, direction: "to bottom", duration: 1500 },
   ])
+  const removeLine = (id: string) => {
+    setLines(prev => prev.filter(line => line.id !== id))
+  }
 
   return (
     <section ref={ref} className="[perspective:2000px] mt-18 md:mt-32">
@@ -26,6 +29,7 @@ const HeroImage = () => {
           {lines.map((line) => (
             <span 
               key=''
+              onAnimationEnd={() => removeLine(line.id)}
               style={
                 { 
                   "--size" : line.size,
@@ -35,8 +39,8 @@ const HeroImage = () => {
               }
               className={cn(
                 "absolute top-0 block bg-glow-lines",
-                line.direction === "to right" && 'w-[calc(var(--size)*1rem)] h-px left-0 animate-glow-line-horizontal',
-                line.direction === "to bottom" && 'w-px h-[calc(var(--size)*1rem)] right-0 animate-glow-line-vertical'
+                line.direction === "to right" && 'w-[calc(var(--size)*0.6rem)] h-px left-0 animate-glow-line-horizontal',
+                line.direction === "to bottom" && 'w-px h-[calc(var(--size)*0.6rem)] right-0 animate-glow-line-vertical'
               )} 
             />
           ))}
