@@ -1,6 +1,7 @@
 'use client'
 
 import Image from "next/image"
+import type { CSSProperties } from "react";
 import { useInView } from 'react-intersection-observer'
 
 import HeroImg from '../public/img/hero.webp';
@@ -17,6 +18,14 @@ const HeroImage = () => {
         "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(160px)]",
         inView && "before:animate-image-glow"
       )}>
+        <div className="absolute top-0 left-0 z-20 h-full w-full">
+          <span 
+            style={{ "--direction" : "to right" } as CSSProperties }
+            className="absolute top-0 left-0 block bg-glow-lines h-px w-40" />
+          <span 
+            style={{ "--direction" : "to bottom" } as CSSProperties }
+            className="absolute top-0 right-0 block bg-glow-lines h-40 w-px" />
+        </div>
         <svg 
           className={cn(
             "absolute left-0 top-0 h-full w-full",
