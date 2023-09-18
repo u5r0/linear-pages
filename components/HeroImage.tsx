@@ -1,8 +1,9 @@
 'use client'
 
-import Image from "next/image"
 import { useState, type CSSProperties, useEffect, useRef } from "react";
 import { useInView } from 'react-intersection-observer'
+import { nanoid } from 'nanoid'
+import Image from "next/image"
 
 import HeroImg from '../public/img/hero.webp';
 import { cn, randomNumberBetween } from "@/lib/utils";
@@ -19,7 +20,7 @@ const HeroImage = () => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const removeLine = (id: string) => {
-    setLines(prev => prev.filter(line => line.id !== id))
+    setLines(prevLines => prevLines.filter(line => line.id !== id))
   }
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const HeroImage = () => {
       timeoutRef.current = setTimeout(() => {
         setLines(prevLines => [
           ...prevLines, {
-            id: Math.random().toString(36).substring(7),
+            id: nanoid(),
             size: randomNumberBetween(3, 12),
             direction: Math.random() > 0.5 ? "to bottom" : "to right",
             duration: timeout,
@@ -55,7 +56,7 @@ const HeroImage = () => {
         <div className="absolute top-0 left-0 z-20 h-full w-full">
           {lines.map((line) => (
             <span 
-              key=''
+              key={line.id}
               onAnimationEnd={() => removeLine(line.id)}
               style={
                 { 
