@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import type { CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 import { useInView } from 'react-intersection-observer'
 
 import HeroImg from '../public/img/hero.webp';
@@ -9,6 +9,10 @@ import { cn } from "@/lib/utils";
 
 const HeroImage = () => {
   const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true })
+  const [lines, setLines] = useState([
+    { direction: "to bottom", duration: 1500, size: 12 },
+    { direction: "to right", duration: 3000, size: 10 },
+  ])
 
   return (
     <section ref={ref} className="[perspective:2000px] mt-18 md:mt-32">
@@ -19,17 +23,28 @@ const HeroImage = () => {
         inView && "before:animate-image-glow"
       )}>
         <div className="absolute top-0 left-0 z-20 h-full w-full">
-          <span 
-            style={{ "--direction" : "to right" } as CSSProperties }
-            className="absolute top-0 left-0 block bg-glow-lines h-px w-40" />
-          <span 
-            style={{ "--direction" : "to bottom" } as CSSProperties }
-            className="absolute top-0 right-0 block bg-glow-lines h-40 w-px" />
+          {lines.map((line) => (
+            <span 
+              key=''
+              style={
+                { 
+                  "--size" : line.size,
+                  "--direction" : line.direction,
+                  "--animation-duration" : `${line.duration}ms`
+                } as CSSProperties 
+              }
+              className={cn(
+                "absolute top-0 block bg-glow-lines",
+                line.direction === "to right" && 'w-[calc(var(--size)*1rem)] h-px left-0 animate-glow-line-horizontal',
+                line.direction === "to bottom" && 'w-px h-[calc(var(--size)*1rem)] right-0 animate-glow-line-vertical'
+              )} 
+            />
+          ))}
         </div>
         <svg 
           className={cn(
             "absolute left-0 top-0 h-full w-full",
-            "[&_path]:stroke-white [&_path]:[strokeOpacity:0.2] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1]",
+            "[&_path]:stroke-white [&_path]:[stroke-opacity:0.2] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1]",
             inView && "[&_path]:animate-image-strokes"
           )}
           width="100%" 
