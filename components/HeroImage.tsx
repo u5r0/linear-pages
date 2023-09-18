@@ -1,26 +1,53 @@
 'use client'
 
 import Image from "next/image"
-import { useState, type CSSProperties } from "react";
+import { useState, type CSSProperties, useEffect, useRef } from "react";
 import { useInView } from 'react-intersection-observer'
 
 import HeroImg from '../public/img/hero.webp';
-import { cn } from "@/lib/utils";
+import { cn, randomNumberBetween } from "@/lib/utils";
 
+type Line = {
+  id: string
+  size: number
+  direction: "to bottom" | "to right"
+  duration: number
+}
 const HeroImage = () => {
   const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true })
-  const [lines, setLines] = useState([
-    { id: "horizontal", size: 10, direction: "to right", duration: 3000 },
-    { id: "vertical", size: 12, direction: "to bottom", duration: 1500 },
-  ])
+  const [lines, setLines] = useState<Line[]>([])
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
   const removeLine = (id: string) => {
     setLines(prev => prev.filter(line => line.id !== id))
   }
 
+  useEffect(() => {
+    const renderLine = (timeout: number) => {
+      timeoutRef.current = setTimeout(() => {
+        setLines(prevLines => [
+          ...prevLines, {
+            id: Math.random().toString(36).substring(7),
+            size: randomNumberBetween(3, 12),
+            direction: Math.random() > 0.5 ? "to bottom" : "to right",
+            duration: timeout,
+          }
+        ])
+        
+        renderLine(randomNumberBetween(600, 2000))
+      }, timeout);
+    }
+    renderLine(randomNumberBetween(750, 1200))
+
+    // Clear timeouts when effect unMounts
+    return () => {
+      timeoutRef.current && clearTimeout(timeoutRef.current)
+    }
+  }, [setLines])
   return (
     <section ref={ref} className="[perspective:2000px] mt-18 md:mt-32">
       <div className={cn(
-        "relative bg-hero-gradient bg-white bg-opacity-[0.01] border border-gray-100 rounded-lg brightness-125",
+        "relative bg-hero-gradient bg-white bg-opacity-[0.01] border border-indigo-950/75 rounded-lg brightness-125",
         inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]",
         "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(160px)]",
         inView && "before:animate-image-glow"
@@ -39,8 +66,8 @@ const HeroImage = () => {
               }
               className={cn(
                 "absolute top-0 block bg-glow-lines",
-                line.direction === "to right" && 'w-[calc(var(--size)*0.6rem)] h-px left-0 animate-glow-line-horizontal',
-                line.direction === "to bottom" && 'w-px h-[calc(var(--size)*0.6rem)] right-0 animate-glow-line-vertical'
+                line.direction === "to right" && 'w-[calc(var(--size)*0.5rem)] h-px left-0 animate-glow-line-horizontal',
+                line.direction === "to bottom" && 'w-px h-[calc(var(--size)*0.5rem)] right-0 animate-glow-line-vertical'
               )} 
             />
           ))}
@@ -62,7 +89,7 @@ const HeroImage = () => {
           <path pathLength="1" d="M538 777L538 128"></path>
         </svg>
         <Image src={HeroImg} alt="Hero image" className={cn(
-          "relative z-10 transition-opacity delay-[680ms]",
+          "relative z-10 transition-opacity delay-[680ms] rounded-lg",
           inView ? "opacity-100" : "opacity-0"
         )} />
       </div>
