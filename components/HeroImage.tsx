@@ -2,7 +2,6 @@
 
 import { useState, type CSSProperties, useEffect, useRef } from "react";
 import { useInView } from 'react-intersection-observer'
-import { nanoid } from 'nanoid'
 import Image from "next/image"
 
 import HeroImg from '../public/img/hero.webp';
@@ -15,7 +14,7 @@ type Line = {
   duration: number
 }
 const HeroImage = () => {
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true })
+  const { ref, inView } = useInView({ threshold: 0.56, triggerOnce: true })
   const [lines, setLines] = useState<Line[]>([])
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -28,7 +27,7 @@ const HeroImage = () => {
       timeoutRef.current = setTimeout(() => {
         setLines(prevLines => [
           ...prevLines, {
-            id: nanoid(),
+            id: crypto.randomUUID(),
             size: randomNumberBetween(3, 12),
             direction: Math.random() > 0.5 ? "to bottom" : "to right",
             duration: timeout,
