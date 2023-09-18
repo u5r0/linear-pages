@@ -1,6 +1,5 @@
-import { Button, Container, Hero } from "@/components";
+import { Button, Container, Hero, HeroImage } from "@/components";
 import { HeroSubtitle, HeroTitle } from "@/components/Hero";
-import HeroImage from "@/components/HeroImage";
 import { ChevronIcon } from "@/components/icons";
 
 export default function Home() {

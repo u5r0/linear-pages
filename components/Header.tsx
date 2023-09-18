@@ -27,6 +27,7 @@ export default function Header() {
     };
   }, [setIsOpen]);
 
+    // Bug: https://github.com/tailwindlabs/tailwindcss/issues/11524 
     // <li className="hidden lg:block">
     //   <Link href=''>Integrations</Link>
     // </li>

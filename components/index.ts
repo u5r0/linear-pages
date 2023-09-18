@@ -4,6 +4,7 @@ import Container from "./Container";
 import Hero from "./Hero";
 import Button from "./Button";
 import NavBar from "./NavBar";
+import HeroImage from "./HeroImage";
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   Hero,
   Button,
   NavBar,
+  HeroImage,
 }
