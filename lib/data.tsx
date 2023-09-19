@@ -29,7 +29,9 @@ export const FooterLinks = [
       { href: '/community', label: 'Community' },
       { href: '/contact', label: 'Contact' },
       { href: '/dpa', label: 'DPA' },
+      { href: '/privacy', label: 'Privacy Policy' },
       { href: '/terms', label: 'Terms of service' },
+      { href: '/vulnerability', label: 'Report a vulnerability' },
     ],
   },
   {
