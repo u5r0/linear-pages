@@ -52,7 +52,7 @@ const HeroImage = () => {
         "before:absolute before:top-0 before:left-0 before:h-full before:w-full before:bg-hero-glow before:opacity-0 before:[filter:blur(160px)]",
         inView && "before:animate-image-glow"
       )}>
-        <div className="absolute top-0 left-0 z-20 h-full w-full">
+        <div className="absolute top-0 left-0 z-20 h-full w-full overflow-hidden">
           {lines.map((line) => (
             <span 
               key={line.id}
